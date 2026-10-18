@@ -19,7 +19,7 @@ public class MouseControl : MonoBehaviour
         {
                _selected.SetSelectedUnit(false);
         }
-        _selected = unit;
+          _selected=unit;
         if(_selected!=null)
         {
             _selected.SetSelectedUnit(true);
@@ -42,7 +42,6 @@ public class MouseControl : MonoBehaviour
            {
                if(hit.collider.TryGetComponent(out MechUnit unit))
                {
-                   _selected = unit;
                    setSelectedUnit(unit);
                }
                else
