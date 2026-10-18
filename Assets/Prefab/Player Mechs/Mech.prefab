@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5086440385448249155}
   - component: {fileID: 6985922763213225834}
   - component: {fileID: 761804055481259214}
+  - component: {fileID: 2746437398431057112}
   m_Layer: 0
   m_Name: Mech
   m_TagString: Untagged
@@ -151,6 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1d4919176856c40bc60b3d8833c3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MechUnit
+  _team: 0
+--- !u!114 &2746437398431057112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 532226346772772764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc84524ee15fc994e90a0178fc4d0d50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SelectionIndicator
   _selectedRing: {fileID: 7255785039677161758}
 --- !u!1 &7255785039677161758
 GameObject:
@@ -219,7 +233,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: deccb389d7e5e7c45b7705b98ac20ccc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

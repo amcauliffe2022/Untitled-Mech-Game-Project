@@ -5,32 +5,31 @@ public class MouseControl : MonoBehaviour
 {
     private Camera _cam;
     private MechUnit _selected;
-    private bool selectedUnit;
+    
 
     private void Awake()
     {
        _cam = Camera.main;
-       selectedUnit = false;
     }
 
-    private void setSelectedUnit(MechUnit unit)
+    private void SetSelectedUnit(MechUnit unit)
     {
         if (_selected !=null)
         {
-               _selected.SetSelectedUnit(false);
+               if(_selected.TryGetComponent(out SelectionIndicator selectionIndicator))
+               {
+                   selectionIndicator.SetActive(false);
+               }
         }
           _selected=unit;
         if(_selected!=null)
         {
-            _selected.SetSelectedUnit(true);
+            if (_selected.TryGetComponent(out SelectionIndicator selectionIndicator))
+            {
+                selectionIndicator.SetActive(true);
+            }
         }
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -42,11 +41,11 @@ public class MouseControl : MonoBehaviour
            {
                if(hit.collider.TryGetComponent(out MechUnit unit))
                {
-                   setSelectedUnit(unit);
+                   SetSelectedUnit(unit);
                }
                else
                {
-                   setSelectedUnit(null);
+                   SetSelectedUnit(null);
                }
            }
         }
