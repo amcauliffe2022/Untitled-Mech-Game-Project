@@ -18,7 +18,7 @@ public class MouseControl : MonoBehaviour
         {
                if(_selected.TryGetComponent(out SelectionIndicator selectionIndicator))
                {
-                   selectionIndicator.SetActive(false);
+                   selectionIndicator.SetVisible(false);
                }
         }
           _selected=unit;
@@ -26,7 +26,7 @@ public class MouseControl : MonoBehaviour
         {
             if (_selected.TryGetComponent(out SelectionIndicator selectionIndicator))
             {
-                selectionIndicator.SetActive(true);
+                selectionIndicator.SetVisible(true);
             }
         }
     }

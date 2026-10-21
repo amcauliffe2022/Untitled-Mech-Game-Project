@@ -36,12 +36,12 @@ public class CameraController : MonoBehaviour
         {
             turn += 1;
         }
+        Vector3 zoomStep = mainCamera.transform.forward * (scroll * scrollSpeed);
+        Vector3 futureScroll = mainCamera.transform.position + zoomStep;
 
-        Vector3 futureScroll = mainCamera.transform.position + mainCamera.transform.forward * scrollSpeed * scroll;
-        float dist = Vector3.Distance(mainCamera.transform.position + futureScroll,transform.position);
-        if (camMin <= dist && dist <= camMax)
+        if (camMin <= futureScroll.y && futureScroll.y <= camMax)
         {
-            mainCamera.transform.position += mainCamera.transform.forward * scrollSpeed * scroll;
+            mainCamera.transform.position += zoomStep;
         }
 
         transform.position += direction * (Time.deltaTime * panSpeed);

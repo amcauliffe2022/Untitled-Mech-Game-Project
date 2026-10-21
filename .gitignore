@@ -110,3 +110,7 @@ InitTestScene*.unity*
 
 # Rider project/workspace settings (per-machine)
 .idea/
+
+# Ignores crash recovery files
+/[Aa]ssets/_Recovery/
+/[Aa]ssets/_Recovery.meta
