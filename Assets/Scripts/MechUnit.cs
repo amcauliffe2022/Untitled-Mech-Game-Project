@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public class MechUnit : MonoBehaviour
 {
     private NavMeshAgent _navMeshAgent;
+    [SerializeField] private SelectionIndicator selectionIndicator;
     [SerializeField] private ObjectTeam  _team = ObjectTeam.Player;
 
 
@@ -15,6 +16,9 @@ public class MechUnit : MonoBehaviour
     {
         _navMeshAgent = GetComponent<NavMeshAgent>();
     }
-    
+    public void SetSelected(bool on)
+    {
+        selectionIndicator.SetVisible(on);
+    }
 
 }

@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af1d4919176856c40bc60b3d8833c3d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MechUnit
+  selectionIndicator: {fileID: 2746437398431057112}
   _team: 0
 --- !u!114 &2746437398431057112
 MonoBehaviour:
